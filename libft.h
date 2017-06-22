@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vcastro- <vcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:51:35 by vcastro-          #+#    #+#             */
-/*   Updated: 2015/12/07 14:12:57 by vcastro-         ###   ########.fr       */
+/*   Updated: 2017/06/21 14:09:53 by vcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIBFT_H
 # define FT_LIBFT_H
-# define BUFF_SIZE 42
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -86,8 +85,9 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					ft_power(int nb, int power);
-char				*ft_itoa_base(int value, int base);
-int					ft_nbrlen(int n);
-int					ft_savefile(int fd, char **file);
-char				*ft_passline(char *file);
+char				*ft_itoa_base(int val, int base);
+char				*ft_strndup(const char *str, unsigned int size);
+
+void    			ft_print_addr(void *addr);
+void				ft_print_addr_fd(void *addr, int fd);
 #endif

@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_print_addr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vcastro- <vcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 10:15:33 by vcastro-          #+#    #+#             */
-/*   Updated: 2015/12/11 19:47:52 by vcastro-         ###   ########.fr       */
+/*   Created: 2017/06/21 14:07:45 by vcastro-          #+#    #+#             */
+/*   Updated: 2017/06/21 14:08:47 by vcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-int		ft_nbrlen(int n)
+void    ft_print_addr(void *addr)
 {
-	int		i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		i++;
-	while (n != 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
+	ft_print_addr_fd(addr, STDOUT_FILENO);
 }

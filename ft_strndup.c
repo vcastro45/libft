@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_passline.c                                      :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 10:16:01 by vcastro-          #+#    #+#             */
-/*   Updated: 2015/12/11 10:16:02 by vcastro-         ###   ########.fr       */
+/*   Created: 2016/01/13 13:30:41 by vcastro-          #+#    #+#             */
+/*   Updated: 2016/01/13 13:30:58 by vcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_passline(char *file)
+char	*ft_strndup(const char *str, unsigned int size)
 {
-	while (*file != '\n' && *file != '\0')
-		file++;
-	if (*file == '\n')
-		file++;
-	return (file);
+	char			*tmp;
+	unsigned int	i;
+
+	i = 0;
+	tmp = (char*)malloc(sizeof(char) * (size + 1));
+	if (tmp == NULL)
+		return (NULL);
+	else
+		while (i < size && *str)
+		{
+			tmp[i] = str[i];
+			i++;
+		}
+	tmp[i] = '\0';
+	return (tmp);
 }
